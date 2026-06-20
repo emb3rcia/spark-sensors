@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spark-sensors"
+version = "0.1.0"
+description = "Python based TUI app for displaying all of your sensors data in one place! Only for Linux!!!"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "emb3rcia" }
+]
+dependencies = [
+    "textual",
+    "rich",
+    "psutil"
+]
+keywords = ["sensors", "tui", "textual", "terminal"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Environment :: Console",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: Linux",
+]
+
+[project.urls]
+Homepage = "https://github.com/emb3rcia/spark-sensors"
+Repository = "https://github.com/emb3rcia/spark-sensors"
+Issues = "https://github.com/emb3rcia/spark-sensors/issues"
+
+[project.scripts]
+spark-tudu = "spark_sensors.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+spark_sensors = ["spark_sensors.tcss"]
