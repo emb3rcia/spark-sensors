@@ -35,7 +35,7 @@ class HwmonCollector:
                     except (OSError, ValueError):
                         continue
                     try:
-                        raw_value = int(raw_value)
+                        raw_value = float(raw_value)
                     except ValueError:
                         continue
                     try:
@@ -48,7 +48,7 @@ class HwmonCollector:
                             SensorReading(
                                 id=sensor_uid,
                                 name=label,
-                                value = raw_value / 1000,
+                                value = float(f"{(raw_value / 1000):.1f}"),
                                 unit="°C",
                                 category="temperature",
                                 source="hwmon"
@@ -70,7 +70,7 @@ class HwmonCollector:
                             SensorReading(
                                 id=sensor_uid,
                                 name=label,
-                                value = raw_value / 1000,
+                                value = float(f"{(raw_value / 1000):.1f}"),
                                 unit="V",
                                 category="voltage",
                                 source="hwmon"
@@ -81,7 +81,7 @@ class HwmonCollector:
                             SensorReading(
                                 id=sensor_uid,
                                 name=label,
-                                value = raw_value / 1000,
+                                value = float(f"{(raw_value / 1000):.1f}"),
                                 unit="A",
                                 category="current",
                                 source="hwmon"
@@ -92,7 +92,7 @@ class HwmonCollector:
                             SensorReading(
                                 id=sensor_uid,
                                 name=label,
-                                value = raw_value / 1_000_000,
+                                value = float(f"{(raw_value / 1_000_000):.1f}"),
                                 unit="W",
                                 category="power",
                                 source="hwmon"

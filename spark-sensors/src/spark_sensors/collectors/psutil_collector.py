@@ -49,7 +49,7 @@ class PsutilCollector:
             SensorReading(
                 id="cpu_freq",
                 name="CPU Frequency",
-                value=psutil.cpu_freq(percpu=False).current,
+                value=float(f"{psutil.cpu_freq(percpu=False).current:.3f}"),
                 unit="MHz",
                 category="cpu",
                 source="psutil"
@@ -63,7 +63,7 @@ class PsutilCollector:
                 SensorReading(
                     id=f"core{str(i)}_freq",
                     name=f"Core {str(i)} Frequency",
-                    value=core.current,
+                    value=float(f"{core.current:.3f}"),
                     unit="MHz",
                     category="cpu",
                     source="psutil"
@@ -76,7 +76,7 @@ class PsutilCollector:
             SensorReading(
                 id="memory_used",
                 name="RAM Used",
-                value=mem.used / (1024 ** 3),
+                value=float(f"{(mem.used / (1024 ** 3)):.2f}"),
                 unit="GiB",
                 category="memory",
                 source="psutil"
@@ -87,7 +87,7 @@ class PsutilCollector:
             SensorReading(
                 id="memory_available",
                 name="RAM Available",
-                value=mem.available / (1024 ** 3),
+                value=float(f"{(mem.available / (1024 ** 3)):.2f}"),
                 unit="GiB",
                 category="memory",
                 source="psutil"
@@ -111,7 +111,7 @@ class PsutilCollector:
             SensorReading(
                 id="swap_used",
                 name="SWAP Used",
-                value=swap.used / (1024 ** 3),
+                value=float(f"{(swap.used / (1024 ** 3)):.2f}"),
                 unit="GiB",
                 category="memory",
                 source="psutil"
@@ -122,7 +122,7 @@ class PsutilCollector:
             SensorReading(
                 id="swap_free",
                 name="SWAP Free",
-                value=swap.free / (1024 ** 3),
+                value=float(f"{(swap.free / (1024 ** 3)):.2f}"),
                 unit="GiB",
                 category="memory",
                 source="psutil"
@@ -195,7 +195,7 @@ class PsutilCollector:
             SensorReading(
                 id="memory_total",
                 name="RAM Total",
-                value=mem.total / (1024 ** 3),
+                value=float(f"{(mem.total / (1024 ** 3)):.2f}"),
                 unit="GiB",
                 category="memory",
                 source="psutil"
@@ -208,7 +208,7 @@ class PsutilCollector:
             SensorReading(
                 id="swap_total",
                 name="SWAP Total",
-                value=swap.total / (1024 ** 3),
+                value=float(f"{(swap.total / (1024 ** 3)):.2f}"),
                 unit="GiB",
                 category="memory",
                 source="psutil"
