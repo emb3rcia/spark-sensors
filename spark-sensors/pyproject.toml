@@ -14,7 +14,8 @@ authors = [
 dependencies = [
     "textual",
     "rich",
-    "psutil"
+    "psutil",
+    "nvidia-ml-py"
 ]
 keywords = ["sensors", "tui", "textual", "terminal"]
 classifiers = [

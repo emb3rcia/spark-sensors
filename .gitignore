@@ -1,0 +1,4 @@
+.vscode/
+.venv/
+spark_sensors.egg-info/
+__pycache__/
