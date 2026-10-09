@@ -3,3 +3,4 @@
 spark_sensors.egg-info/
 __pycache__/
 .idea/
+dist/
